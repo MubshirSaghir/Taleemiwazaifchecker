@@ -1,0 +1,219 @@
+/* Scope everything to #taleemi-wrapper to prevent affecting the WordPress theme */
+#taleemi-wrapper {
+    --bg-color: transparent;
+    --card-bg: #ffffff;
+    --primary-blue: #154c79; /* Dark blue matching the image */
+    --primary-blue-hover: #103e65;
+    --border-color: #d1d5db;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --btn-secondary-bg: #f8fafc;
+    --btn-secondary-border: #cbd5e1;
+    --btn-secondary-hover: #f1f5f9;
+    --error-bg: #fee2e2;
+    --error-text: #b91c1c;
+    --success-bg: #dcfce7;
+    --success-text: #15803d;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --lang-text: #0f172a;
+
+    font-family: var(--font-family);
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#taleemi-wrapper * {
+    box-sizing: border-box;
+}
+
+#taleemi-wrapper .card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 12px;
+    padding: 32px 24px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+#taleemi-wrapper .header h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 0;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+#taleemi-wrapper .language-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+#taleemi-wrapper .lang-btn {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: var(--lang-text);
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s;
+    padding: 0;
+}
+
+#taleemi-wrapper .lang-btn:hover {
+    opacity: 0.8;
+}
+
+#taleemi-wrapper .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#taleemi-wrapper .form-group {
+    margin-bottom: 0;
+}
+
+#taleemi-wrapper .input-field {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-main);
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+}
+
+#taleemi-wrapper .select-field {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+#taleemi-wrapper .input-field:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(21, 76, 121, 0.15);
+}
+
+#taleemi-wrapper .input-field::placeholder {
+    color: #9ca3af;
+}
+
+#taleemi-wrapper .primary-btn, 
+#taleemi-wrapper .secondary-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+#taleemi-wrapper .primary-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: 1px solid var(--primary-blue);
+}
+
+#taleemi-wrapper .primary-btn:hover {
+    background-color: var(--primary-blue-hover);
+    border-color: var(--primary-blue-hover);
+    color: white;
+}
+
+#taleemi-wrapper .secondary-btn {
+    background-color: var(--btn-secondary-bg);
+    color: var(--text-main);
+    border: 1px solid var(--btn-secondary-border);
+}
+
+#taleemi-wrapper .secondary-btn:hover {
+    background-color: var(--btn-secondary-hover);
+    color: var(--text-main);
+}
+
+#taleemi-wrapper .reset-icon {
+    width: 16px;
+    height: 16px;
+}
+
+#taleemi-wrapper .result-container {
+    padding: 14px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 4px;
+    animation: taleemiFadeIn 0.3s ease-in-out;
+}
+
+#taleemi-wrapper .result-container.hidden {
+    display: none;
+}
+
+#taleemi-wrapper .result-container.error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+}
+
+#taleemi-wrapper .result-container.success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+
+#taleemi-wrapper .result-icon {
+    display: flex;
+    align-items: center;
+}
+
+#taleemi-wrapper .result-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes taleemiFadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RTL Support */
+#taleemi-wrapper[dir="rtl"] .select-field {
+    background-position: left 16px center;
+    padding-left: 40px;
+    padding-right: 16px;
+}
+#taleemi-wrapper[dir="rtl"] .result-container {
+    flex-direction: row-reverse;
+}
+#taleemi-wrapper[dir="rtl"] .secondary-btn, 
+#taleemi-wrapper[dir="rtl"] .primary-btn, 
+#taleemi-wrapper[dir="rtl"] .header h2 {
+    flex-direction: row-reverse;
+}
