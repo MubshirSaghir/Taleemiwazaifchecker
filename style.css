@@ -21,7 +21,9 @@
     width: 100%;
     padding: 20px 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
     box-sizing: border-box;
 }
 
@@ -216,4 +218,33 @@
 #taleemi-wrapper[dir="rtl"] .primary-btn, 
 #taleemi-wrapper[dir="rtl"] .header h2 {
     flex-direction: row-reverse;
+}
+
+#taleemi-wrapper .info-section {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 20px;
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+#taleemi-wrapper .info-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+#taleemi-wrapper .info-section p {
+    margin-bottom: 16px;
+}
+
+#taleemi-wrapper .info-section a {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+#taleemi-wrapper .info-section a:hover {
+    color: var(--primary-blue-hover);
 }
