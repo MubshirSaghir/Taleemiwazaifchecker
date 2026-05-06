@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://MubshirSaghir.github.io/Taleemiwazaifchecker/sitemap.xml
